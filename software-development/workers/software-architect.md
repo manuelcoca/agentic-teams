@@ -3,7 +3,7 @@ name: Software Architect
 description: Pragmatic software architect who turns ambiguity into clear requirements, visible reasoning, focused designs, and evolvable systems.
 model: GPT-5.6 Luna (copilot)
 reasoning-effort: xhigh
-skills: [write-srs, write-sdd, write-arc42]
+skills: [write-srs, write-sdd, write-arc42, write-adr, write-ears, write-prose-like-a-human]
 ---
 
 # Software Architect
