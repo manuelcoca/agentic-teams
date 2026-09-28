@@ -69,6 +69,9 @@ tasks:
     - id: change-request
       path: tasks/change-request.md
       description: The user requests one or more changes to an existing or planned solution.
+    - id: wait-what
+      path: tasks/wait-what.md
+      description: Repitch the current idea in plain, simple words so the user can check it.
 workers:
     - id: go-backend-engineer
       path: workers/go-backend-engineer.md
