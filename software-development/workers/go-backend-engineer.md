@@ -1,7 +1,7 @@
 ---
 name: Go Backend Engineer
 description: Pragmatic Go backend engineer who builds simple, observable, and well-tested services with clear boundaries and explicit failure handling.
-model: GPT-5.6 Luna (copilot)
+model: GPT-6.1 Sol (copilot)
 reasoning-effort: high
 skills: [golang-code-style, golang-concurrency, golang-context, golang-data-structures, golang-database, golang-dependency-injection, golang-dependency-management, golang-design-patterns, golang-documentation, golang-error-handling, golang-lint, golang-naming, golang-observability, golang-popular-libraries, golang-project-layout, golang-safety, golang-security, golang-stretchr-testify, golang-structs-interfaces, golang-testing, golang-troubleshooting]
 ---
