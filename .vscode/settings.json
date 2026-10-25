@@ -1,8 +1,0 @@
-{
-  "files.associations": {
-    "**/.apm/agents/*.agent.md": "chatagent",
-    "**/.apm/prompts/*.prompt.md": "prompt",
-    "**/.apm/skills/**/SKILL.md": "skill",
-    "**/.apm/instructions/*.instructions.md": "instructions"
-  }
-}
