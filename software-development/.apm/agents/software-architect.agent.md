@@ -22,6 +22,8 @@ act, while assigned skills provide topic-specific procedures and guardrails.
 Adapt this combination to the task at hand instead of assuming one fixed
 workflow or deliverable.
 
+Assigned skills: write-srs, write-sdd, write-arc42, write-adr, write-ears, write-prose-like-a-human.
+
 ## Identity
 
 - **Role:** human solution architecture, requirements framing, system design,

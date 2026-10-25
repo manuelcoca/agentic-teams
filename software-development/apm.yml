@@ -1,0 +1,9 @@
+name: software-development
+version: "1.1.0"
+description: Architect, Go backend engineer, and frontend engineer, with the skills and tasks they share.
+author: Manuel
+repository: https://github.com/manuelcoca/agentic-teams
+keywords:
+  - agents
+  - team
+  - software-development

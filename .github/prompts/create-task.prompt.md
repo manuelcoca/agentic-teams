@@ -1,15 +1,19 @@
 ---
 name: create-task
-description: Create or revise one miez task with valid frontmatter and clear instructions.
-argument-hint: Describe the task's goal, what the worker should do, and what it should avoid.
+description: Create or revise one team task with valid frontmatter and clear instructions.
+argument-hint: Team directory, goal, actions, and exclusions.
 ---
 
-Create or revise exactly one task in `tasks/<task-id>.md`.
+Create or revise exactly one task in `<team>/.apm/prompts/<task-id>.prompt.md`.
 
-Use a lowercase kebab-case id from the file name. A task describes what needs
-to be done: one actionable step that a worker can perform using its assigned
-skills. Keep worker identity in workers, reusable procedures in skills, and
-multi-worker order in workflows.
+Use the team directory the user names. If they do not name one and the
+repository has a single team, use that team.
+
+Use a lowercase kebab-case id from the file name. The id must not match
+another prompt in that team. A task describes what needs to be done: one
+actionable objective a worker can perform with its assigned skills. Keep
+worker identity in workers, procedures in skills, and multi-worker order in
+workflows. Do not add a `phases` key.
 
 Use this template:
 
@@ -33,10 +37,8 @@ Describe the outcome this task should achieve.
 ```
 
 Write the task as direct instructions to the worker. Use paragraphs and bullet
-lists where they make the task clearer; do not add headings that do not serve
-this task.
+lists where they make the task clearer. Do not add an `id` frontmatter field.
+Do not invoke another prompt from the task body.
 
-The task id is derived from the file name; do not add an `id` frontmatter
-field. Do not invoke another prompt from the task body.
-
-Run `miez team build .` after the edit and report the task id and result.
+Run `apm compile --validate` from the team directory and report the task id
+and result.

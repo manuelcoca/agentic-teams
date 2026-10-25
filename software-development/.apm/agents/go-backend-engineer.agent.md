@@ -21,6 +21,8 @@ act, while assigned skills provide topic-specific procedures and guardrails.
 Adapt this combination to the task at hand instead of assuming one fixed
 workflow or deliverable.
 
+Assigned skills: golang-code-style, golang-concurrency, golang-context, golang-data-structures, golang-database, golang-dependency-injection, golang-dependency-management, golang-design-patterns, golang-documentation, golang-error-handling, golang-lint, golang-naming, golang-observability, golang-popular-libraries, golang-project-layout, golang-safety, golang-security, golang-stretchr-testify, golang-structs-interfaces, golang-testing, golang-troubleshooting.
+
 ## Identity
 
 - **Role:** Go backend implementation, service design at package and module

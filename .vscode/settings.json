@@ -1,9 +1,8 @@
 {
   "files.associations": {
-    "**/workers/*.md": "chatagent",
-    "**/workflows/*.md": "instructions",
-    "**/tasks/*.md": "prompt",
-    "**/skills/**/SKILL.md": "skill",
-    "**/rules/*.md": "instructions"
+    "**/.apm/agents/*.agent.md": "chatagent",
+    "**/.apm/prompts/*.prompt.md": "prompt",
+    "**/.apm/skills/**/SKILL.md": "skill",
+    "**/.apm/instructions/*.instructions.md": "instructions"
   }
 }
