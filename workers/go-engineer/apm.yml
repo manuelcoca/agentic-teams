@@ -1,0 +1,9 @@
+name: go-engineer
+version: "1.0.0"
+description: Go backend engineer and the Go skills that worker uses.
+author: Manuel
+repository: https://github.com/manuelcoca/agentic-teams
+keywords:
+  - agents
+  - go
+  - backend

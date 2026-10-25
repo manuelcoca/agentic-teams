@@ -1,0 +1,8 @@
+name: change-request
+version: "1.0.0"
+description: Decide how to handle one or more requested changes to an existing or planned solution.
+author: Manuel
+repository: https://github.com/manuelcoca/agentic-teams
+keywords:
+  - prompt
+  - change-request

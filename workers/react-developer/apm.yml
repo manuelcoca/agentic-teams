@@ -1,0 +1,9 @@
+name: react-developer
+version: "1.0.0"
+description: Frontend engineer and the React and TanStack skills that worker uses.
+author: Manuel
+repository: https://github.com/manuelcoca/agentic-teams
+keywords:
+  - agents
+  - react
+  - frontend

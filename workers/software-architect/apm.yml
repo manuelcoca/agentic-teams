@@ -1,0 +1,8 @@
+name: software-architect
+version: "1.0.0"
+description: Software architect, with the requirements and design skills and the task that worker uses.
+author: Manuel
+repository: https://github.com/manuelcoca/agentic-teams
+keywords:
+  - agents
+  - architecture

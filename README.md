@@ -1,77 +1,68 @@
 # Agentic teams
 
-Each top-level directory that contains an `apm.yml` is one team, and one
-[Agent Package Manager](https://microsoft.github.io/apm/) module. Install the
-team you need into a project. Add another team by adding another directory.
+A catalog of [Agent Package Manager](https://microsoft.github.io/apm/) modules
+for building an agent team. Every module is installed on its own, so a team is
+whichever modules you install together.
 
-A team has four roles:
+## How we think about it
 
-- **Workers** answer "who I am and what I believe". A worker is a persona with
-  a durable identity, motivation, goals, beliefs, judgment, and boundaries.
-  APM installs it as an agent.
-- **Skills** answer "how I should do something". They are reusable,
-  worker-independent procedures and guardrails. A worker lists the skills it
-  uses; the skill does not belong to one worker.
-- **Tasks** answer "what needs to be done". A task is one actionable,
-  worker-neutral objective. APM installs it as a prompt.
+- **Workers** answer "who I am and what I believe". A worker is a persona: a
+  durable identity, motivation, goals, beliefs, judgment, and boundaries. It
+  can bring skills and tasks that only that worker needs.
+- **Skills** answer "how I should do something". They are procedures and
+  guardrails. A specialized worker comes with its own specialized skills.
+- **Tasks** answer "what needs to be done". A task is one actionable
+  objective. It belongs to a worker when only that worker should perform it.
+  Otherwise it is its own module, and it can bring the skill it depends on.
 - **Workflows** answer "what the team does and in which order". A workflow
-  names existing workers in phases. APM installs it as a prompt. The phase
-  order is in the prompt body, because some harnesses keep only the prompt
-  description from frontmatter.
+  names existing workers in phases. It does not carry their skills or tasks.
 
-Tasks and workflows share the prompt directory, so their file names must be
-unique inside one team.
-
-## Install a team
-
-From the project that should receive the team:
-
-```bash
-apm install manuelcoca/agentic-teams/software-development
-```
-
-APM deploys that module's agents, skills, and prompts into the harnesses it
-detects. Append `#<tag-or-commit>` when you need a fixed revision.
-
-## Package layout
+## Repository layout
 
 ```text
-<team>/
+workers/<worker>/   a persona and its worker-specific skills and tasks
+tasks/<task>/       a task several workers can perform, plus its skill if needed
+```
+
+Each of those directories is one module with its own `apm.yml` and `.apm/`
+folder. Workflows will get their own top-level folder.
+
+## Install
+
+From the project that should receive a module:
+
+```bash
+apm install manuelcoca/agentic-teams/workers/software-architect --target opencode --legacy-skill-paths
+```
+
+Replace the path with any module under `workers/` or `tasks/`.
+`--legacy-skill-paths` installs skills under `.opencode/skills/`. Append
+`#<tag-or-commit>` for a fixed revision.
+
+## Module layout
+
+```text
+<module>/
   apm.yml
   .apm/agents/<worker-id>.agent.md
   .apm/skills/<skill-id>/SKILL.md
   .apm/prompts/<task-id>.prompt.md
-  .apm/prompts/<workflow-id>.prompt.md
 ```
 
-| Role | File | Id |
-| --- | --- | --- |
-| Worker | `.apm/agents/<worker-id>.agent.md` | file name |
-| Skill | `.apm/skills/<skill-id>/SKILL.md` | directory name |
-| Task | `.apm/prompts/<task-id>.prompt.md` | file name, no `phases` |
-| Workflow | `.apm/prompts/<workflow-id>.prompt.md` | file name, has `phases` |
-
-Worker frontmatter keeps `skills`, `model`, and `reasoning-effort`. The body
-repeats the skill ids on an `Assigned skills:` line so the persona still sees
-them when a harness ignores that frontmatter key. Skill ids in both places
-must match.
-
-## Teams
-
-- `software-development`: architect, Go backend engineer, and frontend
-  engineer, plus their skills and shared tasks.
+The files under `.apm/` are the OpenCode documents. APM installs agents to
+`.opencode/agents/`, prompts as `.opencode/commands/`, and skills to
+`.opencode/skills/`, removing the `.agent` and `.prompt` part of the file name.
 
 ## Authoring
 
-Edit the team source under `<team>/.apm/`. The `.github/` prompts in this
-repository create and review those files. They are editor help for this
-catalog, not part of an installed team.
-
-From the team directory:
+Edit a module under `<module>/.apm/`. Validate a worker module from its
+directory:
 
 ```bash
 apm compile --validate
 ```
 
+`apm compile` only checks agents and instructions, so it reports nothing to
+validate for a task module.
+
 Do not commit `apm_modules/` or files APM generates into a consumer project.
-The source of a team is `apm.yml` and `.apm/`.

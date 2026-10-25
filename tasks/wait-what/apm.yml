@@ -1,0 +1,7 @@
+name: wait-what
+version: "1.0.0"
+description: Repitch the current idea in plain words so the user can check it.
+author: Manuel
+repository: https://github.com/manuelcoca/agentic-teams
+keywords:
+  - prompt

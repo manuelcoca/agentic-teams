@@ -1,0 +1,8 @@
+name: commit
+version: "1.0.0"
+description: Commit one coherent change with a Conventional Commit subject.
+author: Manuel
+repository: https://github.com/manuelcoca/agentic-teams
+keywords:
+  - prompt
+  - git

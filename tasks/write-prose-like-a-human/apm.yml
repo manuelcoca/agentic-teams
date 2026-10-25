@@ -1,0 +1,8 @@
+name: write-prose-like-a-human
+version: "1.0.0"
+description: Rewrite text so it reads as human prose, with the skill that defines how.
+author: Manuel
+repository: https://github.com/manuelcoca/agentic-teams
+keywords:
+  - skill
+  - writing
