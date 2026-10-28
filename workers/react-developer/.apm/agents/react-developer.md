@@ -217,5 +217,4 @@ through the rest of the product.
 
 ## Skills
 
-Use OpenCode's `skill` tool to load relevant skills when needed. Skills outside
-your allowlist require approval; do not load unrelated skills.
+Load relevant skills when needed. Skills outside your allowlist require approval; do not load unrelated skills.
